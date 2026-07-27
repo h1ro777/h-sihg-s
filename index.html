@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ================= META-TAGS (SEO) ================= -->
+  <title>BE WOMAN Fest 11 августа – фестиваль для женщин в Боярской Усадьбе</title>
+  <meta name="description" content="Мягкая встреча 100 женщин. 4 блока (творчество, тело, ритм, красота), лекторий, пилатес, afterparty и розыгрыш призов более чем на 80 000 ₽ от генеральных партнёров." />
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/cormorant@latest/cyrillic-500-normal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/cormorant@latest/cyrillic-600-normal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/cormorant@latest/cyrillic-500-italic.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/cormorant@latest/cyrillic-600-italic.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/onest@latest/cyrillic-300-normal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/onest@latest/cyrillic-400-normal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/onest@latest/cyrillic-500-normal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/fontsource/css/onest@latest/cyrillic-700-normal.css">
+
+  <!-- ЮKassa checkout widget -->
+  <script src="https://yookassa.ru/checkout-widget/v1/checkout-widget.js" defer></script>
+
+  <style>
+    /* ========== ROOT ========== */
+    :root{
+      --cream:#FFF5F5;
+      --pink:#F9D1D1;
+      --lav:#D9B8D9;
+      --ink:#3F2D3A;
+      --ink-soft:#7A6470;
+      --accent:#A85570;
+      --accent-dark:#8C4360;
+      --accent-soft:#E9B6C4;
+      --white:#FFFFFF;
+      --line:rgba(63,45,58,.12);
+      --shadow:0 24px 60px -28px rgba(120,60,90,.45);
+      --shadow-soft:0 14px 40px -22px rgba(120,60,90,.35);
+      --r-lg:26px;
+      --r-md:18px;
+      --r-sm:12px;
+      --maxw:1200px;
+      --serif:'Cormorant', Georgia, 'Times New Roman', serif;
+      --sans:'Onest', system-ui, -apple-system, sans-serif;
+      --header-height:72px;
+    }
+
+    /* ========== RESET & BASE ========== */
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--ink);
+      background:var(--cream);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.05;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    img{display:block; max-width:100%;}
+    a{color:inherit; text-decoration:none;}
+    ::selection{background:var(--pink); color:var(--ink);}
+
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+    .eyebrow{
+      font-family:var(--sans);
+      font-weight:500;
+      font-size:.72rem;
+      letter-spacing:.32em;
+      text-transform:uppercase;
+      color:var(--accent);
+      display:inline-flex; align-items:center; gap:.7em;
+    }
+    .eyebrow::before{content:""; width:26px; height:1px; background:var(--accent); display:inline-block;}
+
+    h1,h2,h3{font-family:var(--serif); font-weight:600; line-height:1.02; margin:0; letter-spacing:-.01em;}
+    .ital{font-style:italic; font-weight:500;}
+    .accent{color:var(--accent);}
+
+    /* ========== BUTTONS ========== */
+    .btn{
+      font-family:var(--sans); font-weight:500; font-size:.95rem;
+      border:none; cursor:pointer; border-radius:999px;
+      padding:16px 30px; display:inline-flex; align-items:center; gap:.6em;
+      transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .3s, color .3s;
+      position:relative;
+    }
+    .btn-primary{background:var(--accent); color:#fff; box-shadow:0 14px 30px -14px rgba(168,85,112,.8);}
+    .btn-primary:hover{background:var(--accent-dark); transform:translateY(-3px); box-shadow:0 22px 40px -16px rgba(140,67,96,.85);}
+    .btn-primary:active{transform:translateY(-1px);}
+    .btn-ghost{background:transparent; color:var(--ink); border:1px solid var(--line);}
+    .btn-ghost:hover{background:#fff; border-color:var(--accent-soft); transform:translateY(-3px);}
+    .btn .arrow{transition:transform .35s cubic-bezier(.2,.8,.2,1);}
+    .btn:hover .arrow{transform:translateX(5px);}
+    .btn[disabled]{opacity:.45; cursor:not-allowed; transform:none !important; box-shadow:none;}
+    .btn-sm{padding:12px 22px; font-size:.85rem;}
+    .btn-block{width:100%; justify-content:center;}
+
+    /* ========== HEADER ========== */
+    header.site{
+      position:sticky; top:0; z-index:50;
+      background:rgba(255,245,245,.78);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid transparent;
+      transition:border-color .3s, background .3s, box-shadow .3s;
+      height:var(--header-height);
+    }
+    header.site.scrolled{border-color:var(--line); box-shadow:0 8px 30px -22px rgba(120,60,90,.4);}
+    .nav{display:flex; align-items:center; justify-content:space-between; height:var(--header-height); padding:0;}
+    .brand{display:flex; align-items:center; gap:12px; flex-shrink:0;}
+    .brand .mark{width:34px; height:34px; flex:none;}
+    .brand .name{font-family:var(--serif); font-size:1.55rem; font-weight:600; font-style:italic; letter-spacing:.01em;}
+    .nav-links{display:flex; gap:34px; align-items:center;}
+    .nav-links a{font-size:.9rem; font-weight:400; color:var(--ink-soft); position:relative; padding:4px 0;}
+    .nav-links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--accent); transition:width .35s;}
+    .nav-links a:hover{color:var(--ink);}
+    .nav-links a:hover::after{width:100%;}
+    .nav-cta{display:flex; align-items:center; gap:18px; flex-shrink:0;}
+    .nav-cta .btn{padding:11px 22px; font-size:.85rem;}
+    .burger{display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; padding:6px;}
+    .burger span{width:24px; height:2px; background:var(--ink); border-radius:2px; transition:.3s;}
+
+    /* ========== MOBILE MENU ========== */
+    .mobile-menu{
+      display:none;
+      position:fixed;
+      top:var(--header-height);
+      left:0;
+      right:0;
+      bottom:0;
+      background:rgba(255,245,245,.98);
+      backdrop-filter:blur(16px);
+      z-index:49;
+      padding:40px 28px;
+      flex-direction:column;
+      gap:24px;
+      opacity:0;
+      visibility:hidden;
+      transition:opacity .4s, visibility .4s;
+    }
+    .mobile-menu.open{
+      display:flex;
+      opacity:1;
+      visibility:visible;
+    }
+    .mobile-menu a{
+      font-family:var(--serif);
+      font-size:2rem;
+      font-weight:500;
+      color:var(--ink);
+      padding:8px 0;
+      border-bottom:1px solid var(--line);
+      transition:color .3s, padding-left .3s;
+    }
+    .mobile-menu a:hover{
+      color:var(--accent);
+      padding-left:12px;
+    }
+    .mobile-menu .btn{
+      margin-top:16px;
+      width:100%;
+      justify-content:center;
+    }
+
+    /* ========== HERO ========== */
+    .hero{position:relative; padding:70px 0 90px; overflow:hidden;}
+    .hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none;}
+    .hero-bg .wash1{position:absolute; width:60vw; height:60vw; right:-12vw; top:-18vw; border-radius:50%;
+      background:radial-gradient(circle at 50% 50%, rgba(217,184,217,.5), transparent 65%); filter:blur(8px);}
+    .hero-bg .wash2{position:absolute; width:50vw; height:50vw; left:-14vw; bottom:-22vw; border-radius:50%;
+      background:radial-gradient(circle at 50% 50%, rgba(249,209,209,.7), transparent 65%); filter:blur(8px);}
+    .hero-bg svg.lines{position:absolute; inset:0; width:100%; height:100%; opacity:.5;}
+
+    .hero-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; position:relative; z-index:2;}
+    .hero-meta{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+    .hero-meta .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(168,85,112,.18);}
+    .hero-meta span{font-size:.85rem; color:var(--ink-soft); letter-spacing:.04em;}
+    .hero h1{font-size:clamp(2.8rem, 8.5vw, 6rem);}
+    .hero h1 .line2{display:block;}
+    .hero h1 .ital{color:var(--accent);}
+    .hero .lead{max-width:530px; margin:26px 0 0; font-size:1.08rem; color:var(--ink-soft); font-weight:300;}
+    .hero .lead b{color:var(--ink); font-weight:500;}
+
+    .hero-actions{display:flex; gap:14px; margin-top:34px; flex-wrap:wrap;}
+
+    /* countdown */
+    .countdown{display:flex; gap:10px; margin-top:40px;}
+    .cd-cell{background:#fff; border:1px solid var(--line); border-radius:var(--r-sm); padding:14px 16px; min-width:74px; text-align:center; box-shadow:var(--shadow-soft);}
+    .cd-num{font-family:var(--serif); font-size:2rem; font-weight:600; line-height:1; color:var(--ink);}
+    .cd-lbl{font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px;}
+
+    /* hero visual */
+    .hero-visual{position:relative; display:flex; justify-content:center;}
+    .hero-frame{position:relative; width:min(440px,100%); aspect-ratio:4/5;}
+    .hero-frame .arch{position:absolute; inset:0; border-radius:50% 50% 22px 22px / 60% 60% 22px 22px; overflow:hidden; box-shadow:var(--shadow);}
+    .hero-frame .arch img{width:100%; height:100%; object-fit:cover;}
+    .hero-frame .ring{position:absolute; inset:-26px; animation:spin 46s linear infinite; pointer-events:none;}
+    .hero-frame .badge{
+      position:absolute; left:-26px; bottom:46px; background:#fff; border-radius:var(--r-md);
+      padding:14px 18px; box-shadow:var(--shadow-soft); display:flex; align-items:center; gap:12px;
+      animation:bob 5s ease-in-out infinite;
+    }
+    .hero-frame .badge .pct{font-family:var(--serif); font-size:1.8rem; font-weight:600; color:var(--accent); line-height:1;}
+    .hero-frame .badge small{display:block; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft);}
+    .hero-frame .badge strong{font-size:.85rem; font-weight:500;}
+    .hero-frame .tag{
+      position:absolute; right:-18px; top:34px; background:var(--lav); color:var(--ink);
+      border-radius:999px; padding:9px 16px; font-size:.78rem; font-weight:500; box-shadow:var(--shadow-soft);
+      animation:bob 6s ease-in-out infinite .6s;
+    }
+
+    .float{position:absolute; z-index:1; pointer-events:none; opacity:.7;}
+    .float.petal{animation:floaty 9s ease-in-out infinite;}
+    .float.spark{animation:twinkle 4s ease-in-out infinite;}
+
+    @keyframes spin{to{transform:rotate(360deg);}}
+    @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+    @keyframes floaty{0%,100%{transform:translateY(0) rotate(0);}50%{transform:translateY(-22px) rotate(14deg);}}
+    @keyframes twinkle{0%,100%{transform:scale(.7); opacity:.3;}50%{transform:scale(1.1); opacity:.9;}}
+
+    /* ========== MARQUEE ========== */
+    .marquee{border-block:1px solid var(--line); background:linear-gradient(90deg, rgba(249,209,209,.35), rgba(217,184,217,.3)); padding:18px 0; overflow:hidden; position:relative; z-index:1;}
+    .marquee-track{display:flex; gap:48px; width:max-content; animation:scroll 32s linear infinite; align-items:center;}
+    .marquee:hover .marquee-track{animation-play-state:paused;}
+    .marquee-track span{font-family:var(--serif); font-style:italic; font-size:1.7rem; color:var(--ink); white-space:nowrap;}
+    .marquee-track .fl{color:var(--accent); font-style:normal;}
+    @keyframes scroll{to{transform:translateX(-50%);}}
+
+    /* ========== SECTION BASE ========== */
+    section.block{padding:110px 0; position:relative; z-index:1;}
+    .sec-head{max-width:680px;}
+    .sec-head h2{font-size:clamp(2rem, 4.6vw, 3.6rem); margin-top:18px;}
+    .sec-head p{margin-top:18px; color:var(--ink-soft); font-weight:300; font-size:1.05rem;}
+
+    /* ========== ABOUT (О ФЕСТИВАЛЕ) ========== */
+    .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-top:64px;}
+    .about-text p{color:var(--ink-soft); font-weight:300; font-size:1.06rem; margin:0 0 18px;}
+    .about-text p b{color:var(--ink); font-weight:500;}
+    .signature{font-family:var(--serif); font-style:italic; font-size:1.5rem; color:var(--accent); margin-top:8px;}
+    .about-visual{position:relative;}
+    .about-visual .photo{border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow); transform:rotate(-1.4deg);}
+    .about-visual .photo img{width:100%; height:100%; object-fit:cover; aspect-ratio:1/1;}
+    .about-visual .quote{
+      position:absolute; left:-22px; bottom:-26px; background:#fff; border-radius:var(--r-md);
+      padding:20px 24px; max-width:240px; box-shadow:var(--shadow-soft); transform:rotate(1.6deg);
+    }
+    .about-visual .quote p{font-family:var(--serif); font-style:italic; font-size:1.2rem; line-height:1.3; margin:0; color:var(--ink);}
+    .about-visual .quote span{display:block; margin-top:8px; font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-soft);}
+
+    .stats{display:flex; flex-wrap:wrap; gap:0; margin-top:70px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+    .stat{flex:1 1 150px; padding:30px 24px; text-align:center; position:relative;}
+    .stat + .stat::before{content:""; position:absolute; left:0; top:24%; height:52%; width:1px; background:var(--line);}
+    .stat .num{font-family:var(--serif); font-size:2.8rem; font-weight:600; line-height:1; color:var(--accent);}
+    .stat .lbl{font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:8px;}
+
+    /* ========== PROGRAM (ПРОГРАММА ДНЯ) ========== */
+    .program{margin-top:80px; display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:start;}
+    .program .intro h3{font-size:2rem;}
+    .program .intro p{color:var(--ink-soft); font-weight:300; margin-top:14px;}
+    .timeline{position:relative; padding-left:34px;}
+    .timeline::before{content:""; position:absolute; left:8px; top:6px; bottom:6px; width:1px; background:linear-gradient(var(--accent-soft), transparent);}
+    .tl-item{position:relative; padding:0 0 30px 0;}
+    .tl-item:last-child{padding-bottom:0;}
+    .tl-item::before{content:""; position:absolute; left:-30px; top:6px; width:15px; height:15px; border-radius:50%; background:var(--cream); border:2px solid var(--accent);}
+    .tl-item .time{font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--accent);}
+    .tl-item .ttl{font-weight:500; font-size:1.05rem; margin-top:2px;}
+    .tl-item .desc{color:var(--ink-soft); font-weight:300; font-size:.92rem; margin-top:4px;}
+
+    /* ========== CONDITIONS (УСЛОВИЯ УЧАСТИЯ / РОЗЫГРЫШ) ========== */
+    .terms{background:linear-gradient(180deg, rgba(249,209,209,.22), rgba(217,184,217,.18)); border-block:1px solid var(--line);}
+    .terms-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:56px; margin-top:56px; align-items:start;}
+    .cond-list{display:grid; grid-template-columns:1fr 1fr; gap:18px 28px;}
+    .cond{display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:18px 20px; transition:transform .3s, box-shadow .3s, border-color .3s;}
+    .cond:hover{transform:translateY(-4px); box-shadow:var(--shadow-soft); border-color:var(--accent-soft);}
+    .cond .tick{flex:none; width:26px; height:26px; border-radius:50%; background:var(--pink); display:grid; place-items:center; margin-top:2px;}
+    .cond .tick svg{width:13px; height:13px; stroke:var(--accent-dark);}
+    .cond p{margin:0; font-size:.95rem; font-weight:400;}
+    .cond p b{font-weight:500;}
+    .cond-note{background:#fff; border-radius:var(--r-lg); padding:34px; box-shadow:var(--shadow-soft); position:sticky; top:110px;}
+    .cond-note .ic{width:48px; height:48px; border-radius:14px; background:var(--lav); display:grid; place-items:center; margin-bottom:18px;}
+    .cond-note h3{font-size:1.6rem;}
+    .cond-note p{color:var(--ink-soft); font-weight:300; margin:12px 0 0; font-size:.96rem;}
+    .cond-note .mini{display:flex; align-items:center; gap:10px; margin-top:22px; padding-top:20px; border-top:1px dashed var(--line); font-size:.85rem; color:var(--ink-soft);}
+    .cond-note .mini svg{flex:none;}
+
+    /* ========== TICKETS / PAYMENT ========== */
+    .pay-grid{display:grid; grid-template-columns:1fr 1.05fr; gap:56px; margin-top:56px; align-items:start;}
+
+    /* ticket selector */
+    .ticket-selector{
+      display:flex;
+      gap:12px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:var(--r-md);
+      padding:6px;
+      margin-bottom:24px;
+    }
+    .ticket-selector button{
+      flex:1;
+      padding:12px 16px;
+      border:none;
+      border-radius:var(--r-sm);
+      background:transparent;
+      font-family:var(--sans);
+      font-size:.95rem;
+      font-weight:500;
+      color:var(--ink-soft);
+      cursor:pointer;
+      transition:all .35s;
+    }
+    .ticket-selector button.active{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 8px 20px -12px rgba(168,85,112,.6);
+    }
+    .socials a{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  display:grid;
+  place-items:center;
+  transition:background .3s, border-color .3s, transform .3s;
+}
+.socials a:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+  transform:translateY(-3px);
+}
+    .ticket-selector button:hover:not(.active){
+      background:var(--cream);
+    }
+    .ticket-selector button .price-tag{
+      display:block;
+      font-size:.72rem;
+      font-weight:400;
+      opacity:.7;
+      margin-top:2px;
+    }
+    .ticket-selector button.active .price-tag{opacity:.8;}
+
+    /* ticket card */
+    .ticket{position:relative; background:#fff; border-radius:var(--r-lg); box-shadow:var(--shadow); overflow:hidden;}
+    .ticket .top{background:linear-gradient(135deg, var(--pink), var(--lav)); padding:34px 34px 40px; position:relative;}
+    .ticket .top .ev{font-family:var(--serif); font-style:italic; font-size:2rem; color:var(--ink);}
+    .ticket .top .meta{margin-top:6px; font-size:.85rem; color:var(--ink-soft);}
+    .ticket .top .ribbon{position:absolute; top:24px; right:24px; background:var(--ink); color:#fff; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; padding:7px 14px; border-radius:999px;}
+    .ticket .top .ribbon.eco{background:var(--accent);}
+    .ticket .notch{position:relative; height:0;}
+    .ticket .notch::before, .ticket .notch::after{content:""; position:absolute; top:-16px; width:32px; height:32px; border-radius:50%; background:var(--cream);}
+    .ticket .notch::before{left:-16px;}
+    .ticket .notch::after{right:-16px;}
+    .ticket .notch .dash{position:absolute; left:30px; right:30px; top:-1px; border-top:2px dashed var(--line);}
+    .ticket .bottom{padding:30px 34px 36px;}
+    .price-row{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
+    .price-row .now{font-family:var(--serif); font-size:3.2rem; font-weight:600; line-height:1;}
+    .price-row .was{display:none;}
+    .price-row .save{display:none;}
+    .incl{list-style:none; padding:0; margin:24px 0 0; display:grid; gap:12px;}
+    .incl li{display:flex; gap:12px; align-items:flex-start; font-size:.94rem; color:var(--ink-soft);}
+    .incl li svg{flex:none; margin-top:3px; stroke:var(--accent);}
+    .incl li b{color:var(--ink); font-weight:500;}
+    .ticket .barcode{margin-top:26px; display:flex; gap:3px; align-items:flex-end; height:34px; opacity:.55;}
+    .ticket .barcode i{display:block; width:2px; background:var(--ink);}
+
+    /* payment form */
+    .pay-form{background:#fff; border:1px solid var(--line); border-radius:var(--r-lg); padding:38px; box-shadow:var(--shadow-soft);}
+    .pay-form h3{font-size:1.8rem;}
+    .pay-form .sub{color:var(--ink-soft); font-weight:300; margin:8px 0 26px; font-size:.95rem;}
+    .field{margin-bottom:18px;}
+    .field label{display:block; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px;}
+    .field input{
+      width:100%; font-family:var(--sans); font-size:1rem; color:var(--ink);
+      background:var(--cream); border:1px solid var(--line); border-radius:var(--r-sm);
+      padding:14px 16px; transition:border-color .25s, box-shadow .25s, background .25s;
+    }
+    .field input::placeholder{color:#b9a3ad;}
+    .field input:focus{outline:none; border-color:var(--accent); background:#fff; box-shadow:0 0 0 4px rgba(168,85,112,.12);}
+    .field input.invalid{border-color:#d98a8a; background:#fff0f0;}
+
+    .check{display:flex; gap:14px; align-items:flex-start; cursor:pointer; margin:24px 0 22px; user-select:none;}
+    .check input{position:absolute; opacity:0; width:0; height:0;}
+    .check .box{flex:none; width:26px; height:26px; border-radius:8px; border:1.5px solid var(--accent-soft); background:var(--cream); display:grid; place-items:center; transition:background .25s, border-color .25s, transform .2s;}
+    .check .box svg{width:14px; height:14px; stroke:#fff; stroke-width:3; fill:none; stroke-dasharray:20; stroke-dashoffset:20; transition:stroke-dashoffset .35s ease;}
+    .check input:checked + .box{background:var(--accent); border-color:var(--accent); transform:scale(1.04);}
+    .check input:checked + .box svg{stroke-dashoffset:0;}
+    .check input:focus-visible + .box{box-shadow:0 0 0 4px rgba(168,85,112,.18);}
+    .check .txt{font-size:.88rem; color:var(--ink-soft); line-height:1.5;}
+    .check .txt a{color:var(--accent); text-decoration:underline; text-underline-offset:3px;}
+
+    .pay-form .btn{width:100%; justify-content:center; padding:18px; font-size:1rem;}
+    .secure{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; font-size:.78rem; color:var(--ink-soft);}
+    .secure svg{flex:none;}
+    .pay-logos{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:18px; opacity:.7;}
+    .pay-logos .yk{font-family:var(--sans); font-weight:700; letter-spacing:.02em; color:var(--ink); font-size:.95rem;}
+    .pay-logos .yk span{color:var(--accent);}
+
+    /* ========== FOOTER ========== */
+    footer.site{background:var(--ink); color:#f3e3ea; padding:70px 0 36px; position:relative; z-index:1;}
+    .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+    .foot-brand .name{font-family:var(--serif); font-style:italic; font-size:2rem; color:#fff;}
+    .foot-brand p{color:#c9b3bf; font-weight:300; margin-top:14px; max-width:320px; font-size:.95rem;}
+    .foot-col h4{font-family:var(--sans); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--accent-soft); margin:0 0 18px;}
+    .foot-col a, .foot-col p{display:block; color:#d8c2cd; font-size:.92rem; margin-bottom:12px; transition:color .25s;}
+    .foot-col a:hover{color:#fff;}
+    .foot-bottom{margin-top:54px; padding-top:24px; border-top:1px solid rgba(255,255,255,.12); display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:.82rem; color:#b69fab;}
+
+    /* ========== MODAL ========== */
+    .modal-overlay{position:fixed; inset:0; z-index:100; background:rgba(63,45,58,.55); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center; padding:24px; opacity:0; visibility:hidden; transition:opacity .35s, visibility .35s;}
+    .modal-overlay.open{opacity:1; visibility:visible;}
+    .modal{background:var(--cream); border-radius:var(--r-lg); max-width:480px; width:100%; padding:38px; position:relative; box-shadow:0 40px 90px -30px rgba(0,0,0,.5); transform:translateY(20px) scale(.97); transition:transform .4s cubic-bezier(.2,.8,.2,1); max-height:90vh; overflow:auto;}
+    .modal-overlay.open .modal{transform:none;}
+    .modal-close{position:absolute; top:18px; right:18px; width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; cursor:pointer; font-size:1rem; color:var(--ink-soft); transition:background .25s, color .25s, transform .25s;}
+    .modal-close:hover{background:var(--pink); color:var(--ink); transform:rotate(90deg);}
+    .modal-head{text-align:center;}
+    .modal-head .mfl{width:54px; height:54px; margin:0 auto 14px;}
+    .modal-head h3{font-size:1.9rem;}
+    .modal-amount{color:var(--ink-soft); font-weight:300; margin:8px 0 0; font-size:.95rem;}
+    .widget-box{margin-top:24px; min-height:60px;}
+    .widget-state{text-align:center; padding:30px 10px;}
+    .spinner{width:42px; height:42px; border-radius:50%; border:3px solid var(--pink); border-top-color:var(--accent); margin:0 auto 16px; animation:spin 1s linear infinite;}
+    .widget-state p{color:var(--ink-soft); font-weight:300; margin:0;}
+    .demo{background:#fff; border:1px dashed var(--accent-soft); border-radius:var(--r-md); text-align:left; padding:22px;}
+    .demo h4{font-family:var(--serif); font-size:1.3rem; margin:0 0 8px;}
+    .demo p{font-size:.9rem; color:var(--ink-soft); font-weight:300; margin:0 0 14px;}
+    .demo pre{background:var(--ink); color:#f3d9e2; border-radius:var(--r-sm); padding:16px; overflow:auto; font-size:.74rem; line-height:1.6; margin:0; font-family:ui-monospace, Menlo, monospace;}
+    .demo pre .c{color:#b08a98;}
+    .demo pre .k{color:var(--accent-soft);}
+    .modal-secure{display:flex; align-items:center; justify-content:center; gap:8px; margin:22px 0 0; font-size:.78rem; color:var(--ink-soft);}
+
+    /* ========== REVEAL ========== */
+    .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);}
+    .reveal.visible{opacity:1; transform:none;}
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr; gap:48px;}
+      .hero-visual{order:-1;}
+      .hero h1{font-size:clamp(2.8rem,12vw,4.6rem);}
+      .about-grid{grid-template-columns:1fr; gap:48px;}
+      .program{grid-template-columns:1fr; gap:34px;}
+      .terms-grid{grid-template-columns:1fr; gap:36px;}
+      .cond-note{position:static;}
+      .pay-grid{grid-template-columns:1fr; gap:36px;}
+      .foot-grid{grid-template-columns:1fr 1fr; gap:34px;}
+    }
+
+    @media (max-width:768px){
+      .nav-links{display:none;}
+      .nav-cta .btn-ghost{display:none;}
+      /* Скрываем кнопку "Забронировать место" в хедере на мобильных */
+      .nav-cta .btn-primary{display:none;}
+      .burger{display:flex;}
+      .cond-list{grid-template-columns:1fr;}
+      .ticket-selector{flex-direction:column;}
+      .ticket-selector button{width:100%;}
+      .ticket .top .ribbon{position:static; display:inline-block; margin-bottom:12px;}
+      .pay-form{padding:24px;}
+      .ticket .top, .ticket .bottom{padding-left:20px; padding-right:20px;}
+      .price-row .now{font-size:2.6rem;}
+      .hero-frame .badge{left:8px; bottom:20px; padding:12px 14px;}
+      .hero-frame .badge .pct{font-size:1.4rem;}
+      .hero-frame .tag{right:8px; top:20px; font-size:.7rem; padding:6px 12px;}
+    }
+
+    @media (max-width:640px){
+      .wrap{padding:0 16px;}
+      section.block{padding:60px 0;}
+      .hero{padding:40px 0 60px;}
+      .countdown{flex-wrap:wrap; gap:6px;}
+      .cd-cell{flex:1 1 60px; min-width:60px; padding:10px 8px;}
+      .cd-num{font-size:1.4rem;}
+      .cd-lbl{font-size:.5rem;}
+      .hero-actions{flex-direction:column; width:100%;}
+      .hero-actions .btn{width:100%; justify-content:center;}
+      .stats{gap:0;}
+      .stat{flex:1 1 50%; padding:20px 12px;}
+      .stat + .stat::before{display:none;}
+      .stat .num{font-size:2rem;}
+      .stat .lbl{font-size:.7rem;}
+      .foot-grid{grid-template-columns:1fr; gap:28px;}
+      .about-visual .quote{left:8px; bottom:-8px; max-width:180px; padding:14px 16px;}
+      .about-visual .quote p{font-size:1rem;}
+      .modal{padding:24px 20px;}
+      .ticket-selector{padding:4px;}
+      .ticket-selector button{padding:10px 12px; font-size:.85rem;}
+      .pay-form{padding:20px;}
+      .pay-form h3{font-size:1.4rem;}
+      .hero-frame .ring{display:none;}
+      .hero-frame .badge{display:none;}
+      .hero-frame .tag{display:none;}
+      .marquee-track span{font-size:1.2rem;}
+      .marquee-track{gap:24px;}
+      .sec-head h2{font-size:clamp(1.8rem,8vw,2.6rem);}
+      .cond-note{padding:24px;}
+      .cond-note h3{font-size:1.3rem;}
+      .ticket .top{padding:24px 20px 30px;}
+      .ticket .top .ev{font-size:1.6rem;}
+      .ticket .bottom{padding:20px;}
+      .price-row .now{font-size:2.2rem;}
+      .price-row .was{font-size:.95rem;}
+      .incl li{font-size:.85rem;}
+    }
+
+    @media (max-width:400px){
+      .brand .name{font-size:1.2rem;}
+      .brand .mark{width:28px; height:28px;}
+      .hero h1{font-size:clamp(2.2rem,10vw,3rem);}
+      .cd-cell{min-width:48px; padding:8px 6px;}
+      .cd-num{font-size:1.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site" id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="BE WOMAN Fest — на главную">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <g fill="#D9B8D9"><path d="M20 4c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 36c-3-4-3-9 0-13 3 4 3 9 0 13z"/><path d="M4 20c4-3 9-3 13 0-4 3-9 3-13 0z"/><path d="M36 20c-4 3-9 3-13 0 4-3 9-3 13 0z"/></g>
+        <g fill="#F9D1D1"><path d="M9 9c5 0 9 3 11 8-5 0-9-3-11-8z"/><path d="M31 31c-5 0-9-3-11-8 5 0 9 3 11 8z"/><path d="M31 9c0 5-3 9-8 11 0-5 3-9 8-11z"/><path d="M9 31c0-5 3-9 8-11 0 5-3 9-8 11z"/></g>
+        <circle cx="20" cy="20" r="4.5" fill="#A85570"/>
+      </svg>
+      <span class="name">BE WOMAN Fest</span>
+    </a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="#about">О фестивале</a>
+      <a href="#program">Программа</a>
+      <a href="#terms">Условия</a>
+      <a href="#tickets">Билеты</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#tickets" class="btn btn-primary btn-sm">Забронировать место</a>
+      <button class="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">О фестивале</a>
+  <a href="#program" class="mobile-link">Программа</a>
+  <a href="#terms" class="mobile-link">Условия</a>
+  <a href="#tickets" class="mobile-link">Билеты</a>
+  <a href="#tickets" class="btn btn-primary">Забронировать место</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="wash1"></div>
+    <div class="wash2"></div>
+    <svg class="lines" viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <path d="M-50 180 C 300 80, 700 320, 1250 120" stroke="#D9B8D9" stroke-width="1" fill="none" opacity=".5"/>
+      <path d="M-50 520 C 350 620, 800 380, 1250 560" stroke="#F9D1D1" stroke-width="1.4" fill="none" opacity=".7"/>
+    </svg>
+  </div>
+
+  <svg class="float petal" style="top:14%; left:6%; width:34px;" viewBox="0 0 24 24" fill="#D9B8D9" aria-hidden="true"><path d="M12 0c6 8 6 16 0 24C6 16 6 8 12 0z"/></svg>
+  <svg class="float petal" style="top:62%; left:48%; width:26px; animation-delay:1.4s;" viewBox="0 0 24 24" fill="#F9D1D1" aria-hidden="true"><path d="M12 0c6 8 6 16 0 24C6 16 6 8 12 0z"/></svg>
+  <svg class="float spark" style="top:24%; left:42%; width:20px;" viewBox="0 0 24 24" fill="#A85570" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+  <svg class="float spark" style="top:74%; left:14%; width:16px; animation-delay:1s;" viewBox="0 0 24 24" fill="#C98AA0" aria-hidden="true"><path d="M12 0l2.5 9.5L24 12l-9.5 2.5L12 24l-2.5-9.5L0 12l9.5-2.5z"/></svg>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <div class="hero-meta">
+        <span class="dot"></span>
+        <span>BE WOMAN Fest · 11 августа · Боярская Усадьба</span>
+      </div>
+      <h1>BE WOMAN <span class="line2"><span class="ital accent">Fest</span></span></h1>
+      <p class="lead"><b>Время, где каждая женщина чувствует себя главной героиней.</b> Без суеты, быта и рабочих вопросов. Только ТЫ и твой голос внутри, теплое окружение, красота и забота.</p>
+
+      <!-- Цифры доверия -->
+      <div style="display:flex; gap:18px; flex-wrap:wrap; margin-top:16px; font-size:.95rem; color:var(--ink-soft);">
+        <span><b style="color:var(--ink);">100</b> участниц</span>
+        <span><b style="color:var(--ink);">8</b> мастеров</span>
+        <span><b style="color:var(--ink);">20+</b> партнёров</span>
+        <span><b style="color:var(--ink);">8</b> часов вдохновения</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#tickets" class="btn btn-primary">Забронировать место <span class="arrow">→</span></a>
+        <a href="#program" class="btn btn-ghost">Смотреть программу</a>
+      </div>
+
+      <!-- Бонус под кнопкой -->
+      <div style="margin-top:24px; background:var(--pink); padding:12px 20px; border-radius:var(--r-md); color:var(--ink); font-weight:500; display:inline-block;">
+        Генеральные партнёры дарят подарки на <b>80 000 ₽</b>!
+        <span style="display:block; font-weight:400; font-size:.85rem; color:var(--ink-soft); margin-top:4px;">
+          Каждый гость автоматически участвует в розыгрыше. Подробности
+          <span style="display:inline-flex; align-items:center; gap:4px;">
+            ниже
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex:none;">
+              <path d="M7 13l5 5 5-5"/>
+              <path d="M12 6v12"/>
+            </svg>
+          </span>
+        </span>
+      </div>
+
+      <div class="countdown" id="countdown" aria-label="Обратный отсчёт до события">
+        <div class="cd-cell"><div class="cd-num" data-cd="days">00</div><div class="cd-lbl">дней</div></div>
+        <div class="cd-cell"><div class="cd-num" data-cd="hours">00</div><div class="cd-lbl">часов</div></div>
+        <div class="cd-cell"><div class="cd-num" data-cd="mins">00</div><div class="cd-lbl">минут</div></div>
+        <div class="cd-cell"><div class="cd-num" data-cd="secs">00</div><div class="cd-lbl">секунд</div></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" data-delay="120">
+      <div class="hero-frame">
+        <svg class="ring" viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#C98AA0" stroke-width=".4" stroke-dasharray="2 4" opacity=".7"/>
+        </svg>
+        <div class="arch">
+          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png" alt="BE WOMAN Fest — атмосфера праздника" loading="eager">
+        </div>
+        <div class="tag">100 женщин ✿</div>
+        <div class="badge">
+          <div class="pct">✿</div>
+          <div><small>До встречи</small><strong>11 августа</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>творчество</span><span class="fl">✿</span><span class="ital">тело</span><span class="fl">✿</span><span>ритм</span><span class="fl">✿</span><span class="ital">красота</span><span class="fl">✿</span><span>вдохновение</span><span class="fl">✿</span><span class="ital">забота</span><span class="fl">✿</span><span>женская энергия</span><span class="fl">✿</span>
+    <span>творчество</span><span class="fl">✿</span><span class="ital">тело</span><span class="fl">✿</span><span>ритм</span><span class="fl">✿</span><span class="ital">красота</span><span class="fl">✿</span><span>вдохновение</span><span class="fl">✿</span><span class="ital">забота</span><span class="fl">✿</span><span>женская энергия</span><span class="fl">✿</span>
+  </div>
+</div>
+
+<!-- ================= ABOUT (О ФЕСТИВАЛЕ) ================= -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">О фестивале</span>
+      <h2>Это не конференция. И не марафон. <br><span class="ital accent">Это время для ТЕБЯ.</span></h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p><b>«BE WOMAN Fest»</b> — это мягкая встреча женщин, которые устали бежать и хотят на один день замедлиться, услышать себя и других.</p>
+        <p>Мы создаём пространство, где не нужно никому ничего доказывать. Здесь ты можешь выдохнуть, почувствовать ЖЕНЩИНУ внутри себя и просто побыть в кругу бережных, красивых и вдохновляющих людей.</p>
+        <p><b>Почему это работает:</b></p>
+        <ul style="color:var(--ink-soft); font-weight:300; padding-left:20px;">
+          <li>5 часов концентрированной заботы о себе</li>
+          <li>4 разных подхода к познанию себя (творчество, тело, ритм, красота)</li>
+          <li>Знакомства с женщинами, которые разделяют твои ценности</li>
+          <li>Атмосфера невероятной красоты и легкости</li>
+          <li>Место, где короны только поправляют</li>
+        </ul>
+        <p style="margin-top:12px;">Особенную атмосферу для нас создает команда <b>INDUSTRY DECOR</b>.</p>
+        <p class="signature">— с любовью, команда BE WOMAN</p>
+      </div>
+
+      <div class="about-visual reveal" data-delay="120">
+        <div class="photo">
+          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/166a341d6-5223-4dfe-9a91-e76737c9e831.png" alt="Атмосфера BE WOMAN Fest" loading="lazy">
+        </div>
+        <div class="quote">
+          <p>«Я пришла уставшей, а ушла — будто меня обняли изнутри».</p>
+          <span>Анна, участница 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><div class="num">100</div><div class="lbl">участниц</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">мастеров</div></div>
+      <div class="stat"><div class="num">20+</div><div class="lbl">партнёров</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">часов вдохновения</div></div>
+    </div>
+
+    <!-- ================= PROGRAM (ПРОГРАММА ДНЯ) ================= -->
+    <div class="program" id="program">
+      <div class="intro reveal">
+        <span class="eyebrow">Программа дня</span>
+        <h3 style="margin-top:16px;">8 часов мягкой трансформации</h3>
+        <p>Мы продумали ритм так, чтобы ты успела всё и никуда не спешила.</p>
+      </div>
+      <div class="timeline reveal" data-delay="120">
+        <div class="tl-item">
+          <div class="time">14:00</div>
+          <div class="ttl">WELCOME & знакомство</div>
+          <div class="desc">Приезжаем, вдыхаем аромат усадьбы, обнимаемся, берём бокалы.</div>
+        </div>
+        <div class="tl-item">
+          <div class="time">14:30</div>
+          <div class="ttl">Открытие. Живая музыка.</div>
+          <div class="desc">Выступление команды one.point.ten. Приветственное слово от Екатерины — создаём общий поток встречи.</div>
+        </div>
+        <div class="tl-item">
+          <div class="time">15:00 – 17:00</div>
+          <div class="ttl">4 блока, чтобы услышать себя</div>
+          <div class="desc">
+            <b>ТВОРЧЕСТВО</b> – рисунок, смола, коллажи от студии. Выпускаем эмоции через цвет и форму.<br>
+            <b>ТЕЛО</b> – мастера телесной терапии помогут услышать сигналы тела, снять зажимы и напряжение.<br>
+            <b>РИТМ</b> – зажигательная латина. Раскрепощаемся, чувствуем ритм и радость движения.<br>
+            <b>КРАСОТА</b> – специалисты по массажу делятся секретами, как поддерживать сияние, чтобы красота начиналась изнутри.
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="time">17:00 – 19:00</div>
+          <div class="ttl">Лекторий & Обед</div>
+          <div class="desc">
+            Совмещаем полезное с приятным (обед оплачивается отдельно). Слушаем и вдохновляемся:<br>
+            • «Как создать свой поток жизни»<br>
+            • «Причины, по которым женщины не реализуются. Как преодолеть и заявить о себе»<br>
+            • «Тренд-2026: "Тихая красота" против агрессивного омоложения»<br>
+            • «Секреты красоты против старения и болезней»
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="time">19:00 – 20:00</div>
+          <div class="ttl">Уникальные бренды & общение + РОЗЫГРЫШ 80 000 ₽</div>
+          <div class="desc">Знакомство с партнёрами, подарки, приятные сюрпризы. Именно в это время мы разыграем главные призы от наших генеральных партнёров. Не пропусти!</div>
+        </div>
+        <div class="tl-item">
+          <div class="time">20:00 – 21:00</div>
+          <div class="ttl">Пилатес от OXIGUM</div>
+          <div class="desc">Мягкое завершение активного дня – возвращаем телу гибкость и лёгкость.</div>
+        </div>
+        <div class="tl-item">
+          <div class="time">21:00 – ...</div>
+          <div class="ttl">AFTERPARTY</div>
+          <div class="desc">Музыка, танцы, общение. Завершаем вечер на красивой ноте.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TERMS / РОЗЫГРЫШ ================= -->
+<section class="block terms" id="terms">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Генеральные партнёры и розыгрыш</span>
+      <h2>Подарки на <span class="ital accent">80 000 ₽</span></h2>
+      <p>Мы собрали бренды, которые разделяют ценности BE WOMAN. Они не просто поддерживают нас – они хотят порадовать именно вас!</p>
+      <p style="font-weight:400; color:var(--ink);">Среди всех участниц фестиваля мы разыграем призы общей стоимостью более <b>80 000 рублей</b>.</p>
+    </div>
+
+    <div class="terms-grid">
+      <div class="cond-list reveal">
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Просто купи билет</b> и приди на фестиваль.</p>
+        </div>
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Розыгрыш в 19:00</b> в блоке «Уникальные бренды & общение».</p>
+        </div>
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Имена победителей</b> объявим со сцены — оставайся до конца!</p>
+        </div>
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Логотипы партнёров</b> — здесь будут размещены изображения.</p>
+        </div>
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Дресс-код</b> — белый / бежевый / светло-пастельное.</p>
+        </div>
+        <div class="cond">
+          <span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+          <p><b>Обед</b> оплачивается самостоятельно.</p>
+        </div>
+      </div>
+
+      <aside class="cond-note reveal" data-delay="120">
+        <div class="ic">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#8C4360" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Как участвовать?</h3>
+        <p>Просто купи билет и приди на фестиваль. Розыгрыш состоится в 19:00 в блоке «Уникальные бренды & общение». Ты можешь выиграть ценный подарок прямо на месте!</p>
+        <div class="mini">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A85570" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+          Остались вопросы? hello@bewomanfest.ru
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TICKETS / PAYMENT ================= -->
+<section class="block" id="tickets">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Билеты</span>
+      <h2>Займите <span class="ital accent">своё место</span></h2>
+      <p>Выберите формат участия — каждый билет включает весь день и участие в розыгрыше.</p>
+    </div>
+
+    <div class="pay-grid">
+      <!-- ticket -->
+      <div class="ticket reveal">
+        <div class="ticket-selector" role="radiogroup" aria-label="Выбор билета">
+          <button role="radio" aria-checked="true" class="active" data-ticket="standard">
+            Участие
+            <span class="price-tag">6 500 ₽</span>
+          </button>
+          <button role="radio" aria-checked="false" data-ticket="vip">
+            С проживанием
+            <span class="price-tag">13 000 ₽</span>
+          </button>
+        </div>
+
+        <div class="top" id="ticketTop">
+          <span class="ribbon" id="ticketRibbon">BE WOMAN</span>
+          <div class="ev">BE WOMAN Fest</div>
+          <div class="meta">11 августа · Боярская Усадьба</div>
+        </div>
+        <div class="notch"><span class="dash"></span></div>
+        <div class="bottom" id="ticketBottom">
+          <div class="price-row">
+            <span class="now" id="ticketPrice">6 500 ₽</span>
+          </div>
+          <ul class="incl" id="ticketIncludes">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span><b>Участие во всех 4 блоках</b> (творчество, тело, ритм, красота)</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span><b>Лекторий</b> с экспертами</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span><b>Пилатес</b> от OXIGUM</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span><b>Afterparty</b> с музыкой и танцами</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span><b>Участие в розыгрыше</b> призов на 80 000 ₽</span></li>
+          </ul>
+          <div class="barcode" id="barcode" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <form class="pay-form reveal" id="payForm" data-delay="120" novalidate>
+        <h3>Оформление билета</h3>
+        <p class="sub">Заполните данные — билет придёт на почту сразу после оплаты.</p>
+
+        <div class="field">
+          <label for="fName">Имя</label>
+          <input type="text" id="fName" name="name" placeholder="Как к вам обращаться" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="fEmail">E-mail для билета</label>
+          <input type="email" id="fEmail" name="email" placeholder="you@example.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="fPhone">Телефон <span style="text-transform:none;letter-spacing:0;color:#b9a3ad;">(необязательно)</span></label>
+          <input type="tel" id="fPhone" name="phone" placeholder="+7 ___ ___ __ __" autocomplete="tel">
+        </div>
+
+        <label class="check">
+          <input type="checkbox" id="agree" required>
+          <span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span>
+          <span class="txt">Я согласна с <a href="#terms">условиями участия</a> и даю согласие на обработку персональных данных.</span>
+        </label>
+
+        <button type="submit" class="btn btn-primary" id="payBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Оплатить сейчас · <span id="payBtnPrice">6 500 ₽</span>
+        </button>
+
+        <div class="secure">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A85570" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg>
+          Безопасная оплата через защищённое соединение
+        </div>
+        <div class="pay-logos">
+          <span class="yk">Ю<span>Kassa</span></span>
+          <span style="color:var(--line);">|</span>
+          <span style="font-size:.78rem;color:var(--ink-soft);">Visa · Mastercard · МИР · СБП</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="name">BE WOMAN Fest</div>
+        <p>Мягкая встреча женщин, которые устали бежать и хотят на один день замедлиться, услышать себя и других.</p>
+        <!-- Социальные сети с Instagram в круглежке -->
+        <div class="socials" aria-label="Социальные сети">
+          <a href="https://www.instagram.com/ekaterinalobosova_/" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f3e3ea" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="#f3e3ea" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Навигация</h4>
+        <a href="#about">О фестивале</a>
+        <a href="#program">Программа</a>
+        <a href="#terms">Условия</a>
+        <a href="#tickets">Билеты</a>
+      </div>
+      <div class="foot-col">
+        <h4>Контакты</h4>
+        <a href="mailto:hello@bewomanfest.ru">hello@bewomanfest.ru</a>
+        <p>Боярская Усадьба<br>11 августа</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 BE WOMAN Fest. Все права защищены.</span>
+      <span>Сделано с любовью ✿</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= PAYMENT MODAL ================= -->
+<div class="modal-overlay" id="payModal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Закрыть">✕</button>
+    <div class="modal-head">
+      <svg class="mfl" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <g fill="#D9B8D9"><path d="M20 4c3 4 3 9 0 13-3-4-3-9 0-13z"/><path d="M20 36c-3-4-3-9 0-13 3 4 3 9 0 13z"/><path d="M4 20c4-3 9-3 13 0-4 3-9 3-13 0z"/><path d="M36 20c-4 3-9 3-13 0 4-3 9-3 13 0z"/></g>
+        <circle cx="20" cy="20" r="4.5" fill="#A85570"/>
+      </svg>
+      <h3 id="payModalTitle">Оплата билета</h3>
+      <p class="modal-amount" id="modalAmount">6 500 ₽ · BE WOMAN Fest, 11 августа</p>
+    </div>
+
+    <div class="widget-box" id="yookassaWidget"></div>
+
+    <div class="widget-state" id="widgetLoading">
+      <div class="spinner"></div>
+      <p>Создаём защищённый платёж…</p>
+    </div>
+
+    <div class="widget-state demo" id="widgetDemo" hidden>
+      <h4>Демо-режим оплаты</h4>
+      <p>Виджет ЮKassa готов к работе. Для боевой оплаты укажите <b>shopId</b> и создавайте платёж на своём сервере — код уже подготовлен ниже.</p>
+      <pre><span class="c">// 1) Сервер: POST /api/create-payment</span>
+<span class="c">//    авторизация shopId + секретный ключ</span>
+<span class="k">const</span> payment = <span class="k">await</span> yookassa.payments.create({
+  amount: { value: <span class="k">'6500.00'</span>, currency: <span class="k">'RUB'</span> },
+  confirmation: { type: <span class="k">'embedded'</span> },
+  description: <span class="k">'Билет BE WOMAN Fest'</span>
+});
+<span class="c">// 2) Клиент: вернуть confirmation_token</span>
+<span class="c">//    и передать его в виджет ↓</span></pre>
+    </div>
+
+    <p class="modal-secure">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A85570" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+      Платёж защищён ЮKassa · данные карты не попадают на сайт
+    </p>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- header shadow ---------- */
+  var header = document.querySelector('header.site');
+  var onScroll = function(){ header.classList.toggle('scrolled', window.scrollY > 12); };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  /* ---------- mobile menu ---------- */
+  var burger = document.querySelector('.burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileLinks = document.querySelectorAll('.mobile-link');
+  var menuOpen = false;
+
+  function toggleMenu(){
+    menuOpen = !menuOpen;
+    mobileMenu.classList.toggle('open', menuOpen);
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    burger.setAttribute('aria-label', menuOpen ? 'Закрыть меню' : 'Меню');
+  }
+
+  burger.addEventListener('click', toggleMenu);
+  mobileLinks.forEach(function(link){
+    link.addEventListener('click', function(){
+      if(menuOpen) toggleMenu();
+    });
+  });
+
+  /* ---------- countdown ---------- */
+  var target = new Date('2026-08-11T14:00:00+03:00').getTime();
+  var cdEls = {
+    days: document.querySelector('[data-cd="days"]'),
+    hours: document.querySelector('[data-cd="hours"]'),
+    mins: document.querySelector('[data-cd="mins"]'),
+    secs: document.querySelector('[data-cd="secs"]')
+  };
+  var pad = function(n){ return String(n).padStart(2,'0'); };
+  function tick(){
+    var diff = target - Date.now();
+    if(diff < 0) diff = 0;
+    var d = Math.floor(diff/86400000);
+    var h = Math.floor(diff%86400000/3600000);
+    var m = Math.floor(diff%3600000/60000);
+    var s = Math.floor(diff%60000/1000);
+    if(cdEls.days) cdEls.days.textContent = pad(d);
+    if(cdEls.hours) cdEls.hours.textContent = pad(h);
+    if(cdEls.mins) cdEls.mins.textContent = pad(m);
+    if(cdEls.secs) cdEls.secs.textContent = pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---------- decorative barcode ---------- */
+  var bc = document.getElementById('barcode');
+  if(bc){
+    var html = '';
+    for(var i=0;i<46;i++){
+      var hh = 14 + Math.round(Math.abs(Math.sin(i*1.7))*20);
+      var w = (i%4===0) ? 3 : 2;
+      html += '<i style="height:'+hh+'px;width:'+w+'px;'+(i%3===0?'opacity:.4;':'')+'"></i>';
+    }
+    bc.innerHTML = html;
+  }
+
+  /* ---------- scroll reveal ---------- */
+  var reveals = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var el = e.target;
+          var delay = el.getAttribute('data-delay');
+          if(delay){ el.style.transitionDelay = delay + 'ms'; }
+          el.classList.add('visible');
+          io.unobserve(el);
+        }
+      });
+    }, {threshold:0.14, rootMargin:'0px 0px -40px 0px'});
+    reveals.forEach(function(el){ io.observe(el); });
+  } else {
+    reveals.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  /* ---------- ticket selector ---------- */
+  var ticketBtns = document.querySelectorAll('.ticket-selector button');
+  var currentTicket = 'standard';
+  var ticketData = {
+    standard: {
+      price: '6 500 ₽',
+      ribbon: 'BE WOMAN',
+      priceNum: 6500,
+      includes: [
+        '<b>Участие во всех 4 блоках</b> (творчество, тело, ритм, красота)',
+        '<b>Лекторий</b> с экспертами',
+        '<b>Пилатес</b> от OXIGUM',
+        '<b>Afterparty</b> с музыкой и танцами',
+        '<b>Участие в розыгрыше</b> призов на 80 000 ₽'
+      ]
+    },
+    vip: {
+      price: '13 000 ₽',
+      ribbon: 'с проживанием',
+      priceNum: 13000,
+      includes: [
+        '<b>Участие во всех 4 блоках</b> (творчество, тело, ритм, красота)',
+        '<b>Лекторий</b> с экспертами',
+        '<b>Пилатес</b> от OXIGUM',
+        '<b>Afterparty</b> с музыкой и танцами',
+        '<b>Проживание</b> в Боярской Усадьбе',
+        '<b>Завтрак</b> включён',
+        '<b>Бассейн с песочком</b> — отдых и релаксация',
+        '<b>Участие в розыгрыше</b> призов на 80 000 ₽'
+      ]
+    }
+  };
+
+  function selectTicket(type){
+    currentTicket = type;
+    var data = ticketData[type];
+
+    ticketBtns.forEach(function(btn){
+      var isActive = btn.getAttribute('data-ticket') === type;
+      btn.setAttribute('aria-checked', isActive);
+      btn.classList.toggle('active', isActive);
+    });
+
+    document.getElementById('ticketPrice').textContent = data.price;
+    document.getElementById('ticketRibbon').textContent = data.ribbon;
+    document.getElementById('ticketRibbon').className = 'ribbon' + (type === 'vip' ? ' eco' : '');
+
+    var list = document.getElementById('ticketIncludes');
+    list.innerHTML = data.includes.map(function(item){
+      return '<li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg><span>' + item + '</span></li>';
+    }).join('');
+
+    document.getElementById('payBtnPrice').textContent = data.price;
+    var modalAmount = document.getElementById('modalAmount');
+    if(modalAmount) modalAmount.textContent = data.price + ' · BE WOMAN Fest, 11 августа';
+  }
+
+  ticketBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = this.getAttribute('data-ticket');
+      selectTicket(type);
+    });
+  });
+
+  /* ---------- form validation + consent gate ---------- */
+  var form = document.getElementById('payForm');
+  var nameEl = document.getElementById('fName');
+  var emailEl = document.getElementById('fEmail');
+  var agreeEl = document.getElementById('agree');
+  var payBtn = document.getElementById('payBtn');
+  var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function validate(showErrors){
+    var nameOk = nameEl.value.trim().length >= 2;
+    var emailOk = emailRe.test(emailEl.value.trim());
+    var agreed = agreeEl.checked;
+    if(showErrors){
+      nameEl.classList.toggle('invalid', !nameOk);
+      emailEl.classList.toggle('invalid', !emailOk);
+    }
+    payBtn.disabled = !(nameOk && emailOk && agreed);
+    return nameOk && emailOk && agreed;
+  }
+  [nameEl, emailEl].forEach(function(el){
+    el.addEventListener('input', function(){ validate(false); });
+    el.addEventListener('blur', function(){ validate(true); });
+  });
+  agreeEl.addEventListener('change', function(){ validate(false); });
+
+  /* ============================================================
+     ЮKASSA INTEGRATION
+  ============================================================ */
+  var YOOKASSA = {
+    shopId: 'ВАШ_SHOP_ID',
+    serverUrl: '/api/create-payment',
+    returnUrl: window.location.href.split('#')[0] + '#tickets'
+  };
+
+  function createPaymentToken(order){
+    return fetch(YOOKASSA.serverUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(order)
+    }).then(function(res){
+      if(!res.ok) throw new Error('payment create failed');
+      return res.json();
+    }).then(function(data){
+      if(!data || !data.confirmation_token) throw new Error('no token');
+      return data.confirmation_token;
+    });
+  }
+
+  function renderYooKassaWidget(token){
+    var box = document.getElementById('yookassaWidget');
+    box.innerHTML = '';
+    if(typeof window.YooMoneyCheckoutWidget !== 'function'){
+      throw new Error('widget script not loaded');
+    }
+    var checkout = new window.YooMoneyCheckoutWidget({
+      confirmation_token: token,
+      return_url: YOOKASSA.returnUrl,
+      customization: {
+        colors: {
+          control_primary: '#A85570',
+          background: '#FFF5F5',
+          text_primary: '#3F2D3A'
+        }
+      },
+      error_callback: function(err){
+        console.warn('ЮKassa error:', err);
+        showDemo();
+      }
+    });
+    checkout.render('yookassaWidget');
+  }
+
+  /* ---------- modal control ---------- */
+  var modal = document.getElementById('payModal');
+  var modalClose = document.getElementById('modalClose');
+  var loading = document.getElementById('widgetLoading');
+  var demo = document.getElementById('widgetDemo');
+  var widgetBox = document.getElementById('yookassaWidget');
+  var lastFocus = null;
+
+  function openModal(){
+    lastFocus = document.activeElement;
+    loading.hidden = false;
+    demo.hidden = true;
+    widgetBox.innerHTML = '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+    widgetBox.innerHTML = '';
+    if(lastFocus) lastFocus.focus();
+  }
+  function showDemo(){
+    loading.hidden = true;
+    demo.hidden = false;
+  }
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+
+  /* ---------- submit ---------- */
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validate(true)) return;
+
+    var data = ticketData[currentTicket];
+    var amount = (data.priceNum / 100).toFixed(2);
+
+    openModal();
+
+    var order = {
+      amount: amount,
+      currency: 'RUB',
+      description: 'Билет BE WOMAN Fest · ' + currentTicket + ' · 11.08.2026',
+      customer: {
+        full_name: nameEl.value.trim(),
+        email: emailEl.value.trim(),
+        phone: document.getElementById('fPhone').value.trim()
+      },
+      ticket_type: currentTicket
+    };
+
+    createPaymentToken(order)
+      .then(function(token){ renderYooKassaWidget(token); loading.hidden = true; })
+      .catch(function(){ showDemo(); });
+  });
+
+})();
+</script>
+</body>
+</html>

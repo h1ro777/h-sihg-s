@@ -12,57 +12,47 @@
 
 <style>
 /* ============================================================
-   TOKENS — садовая палитра, собранная с трёх референсов:
-   роза PASSIE (пудрово-лиловый стенд) + шалфей (салфетки/тарелки)
-   + олива (драпировка шатра) + персик (раннер на столе)
+   TOKENS — садовая палитра:
+   роза PASSIE + шалфей + олива драпировки + персик раннера
    ============================================================ */
 :root {
-  /* роза */
   --rose: #c5878c;
   --rose-deep: #ab6c72;
   --rose-soft: #d9a9ad;
   --rose-faint: #eccfd1;
   --blush: #f0d4d6;
 
-  /* шалфей */
   --sage: #9bb183;
   --sage-deep: #6f8459;
   --sage-soft: #c2d2ad;
   --sage-cream: #f1f3ea;
 
-  /* олива */
   --olive: #93966f;
   --olive-deep: #74774f;
   --olive-soft: #e1e3d0;
 
-  /* персик */
   --peach: #f0d8cb;
   --peach-soft: #f7e7dd;
   --peach-cream: #faf0e9;
 
-  /* бумага / карточки */
   --cream: #fbf5f0;
   --cream-2: #f6ece5;
   --card: #ffffff;
   --card-soft: #fffcf9;
 
-  /* текст — тёплый тауп */
   --ink: #5f554e;
   --ink-soft: #837670;
   --ink-faint: #a4968e;
 
-  /* линии и тени */
   --line: rgba(197, 135, 140, .18);
   --line-sage: rgba(111, 132, 89, .22);
   --shadow: 0 18px 50px -28px rgba(120, 90, 80, .45);
   --shadow-sm: 0 10px 30px -18px rgba(120, 90, 80, .4);
   --shadow-sage: 0 14px 38px -22px rgba(96, 120, 70, .5);
 
-  /* типографика */
   --serif: 'Cormorant Garamond', Georgia, serif;
   --sans: 'Mulish', system-ui, -apple-system, sans-serif;
 
-  /* ширина контента */
   --maxw: 1180px;
 }
 
@@ -92,7 +82,6 @@ body {
   position: relative;
 }
 
-/* ambient садовая дымка: роза слева-сверху, шалфей справа-снизу */
 body::before,
 body::after {
   content: '';
@@ -118,7 +107,6 @@ body::after {
   background: radial-gradient(circle, rgba(155, 177, 131, .4), transparent 68%);
 }
 
-/* бумажная зернистость под фактуру постера и ткани */
 body > .grain {
   position: fixed;
   inset: 0;
@@ -151,7 +139,6 @@ h1, h2, h3, h4 {
   color: var(--olive-deep);
 }
 
-/* прогресс-бар скролла: роза → шалфей → олива */
 #progress {
   position: fixed;
   top: 0;
@@ -365,7 +352,6 @@ h1, h2, h3, h4 {
   margin-bottom: 46px;
 }
 
-/* кнопки */
 .btn {
   font-family: var(--sans);
   font-size: 12px;
@@ -407,19 +393,21 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-sage);
 }
 
-/* hero фото-полоса */
+/* hero фото-полоса: панорама на весь кадр (cover),
+   но строго внутри скруглённой рамки — ничего не вылезает */
 .hero-photo {
   position: relative;
   max-width: var(--maxw);
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 10px;
   overflow: hidden;
   height: clamp(340px, 52vw, 560px);
   background-color: var(--rose-faint);
   background-image: url('https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png');
   background-size: cover;
-  background-position: center 35%;
-  box-shadow: var(--shadow);
+  background-position: center 32%;
+  background-repeat: no-repeat;
+  box-shadow: var(--shadow), inset 0 0 0 1px rgba(255, 255, 255, .45);
 }
 
 .hero-photo::before {
@@ -449,6 +437,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 8px;
   box-shadow: var(--shadow-sm);
+  z-index: 3;
 }
 
 .hero-photo .loc svg {
@@ -456,7 +445,6 @@ h1, h2, h3, h4 {
   color: var(--rose);
 }
 
-/* плавающие лепестки + листики */
 .petals {
   position: absolute;
   inset: 0;
@@ -627,19 +615,53 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+/* подарок: фото целиком (contain) на своей размытой копии */
 .gift-img {
   position: relative;
-  height: 150px;
-  border-radius: 14px;
+  height: 160px;
+  border-radius: 16px;
   overflow: hidden;
-  background: var(--rose-faint);
+  background: linear-gradient(135deg, var(--rose-faint), var(--peach));
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
+}
+
+.gift-img::before {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  background-image: var(--gift);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(22px) saturate(1.08);
+  transform: scale(1.18);
+  opacity: .9;
 }
 
 .gift-img img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  transition: transform .6s ease;
+}
+
+.gift-img:hover img {
+  transform: scale(1.04);
+}
+
+.gift-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), inset 0 0 36px rgba(120, 90, 80, .14);
 }
 
 /* ============================================================
@@ -758,7 +780,6 @@ section.block {
   gap: 9px;
 }
 
-/* листики-маркеры по краям надписи */
 .eyebrow::before {
   content: '';
   width: 9px;
@@ -803,15 +824,6 @@ section.block {
   height: 1px;
   background: linear-gradient(90deg, var(--rose-soft), var(--sage));
   margin: 26px auto 0;
-}
-
-/* декоративный волновой разделитель между секциями */
-.wave {
-  display: block;
-  width: 100%;
-  height: 60px;
-  color: var(--sage-soft);
-  opacity: .5;
 }
 
 /* ============================================================
@@ -859,7 +871,6 @@ section.block {
   color: var(--ink);
 }
 
-/* галочки-листики шалфеем */
 .checks li svg {
   position: absolute;
   left: 0;
@@ -885,25 +896,57 @@ section.block {
   min-height: 440px;
 }
 
+/* фото-ячейка: чёткий кадр целиком (contain) поверх
+   своей размытой копии (cover+blur) — без обрезки и без пустот */
 .ph {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
   background: linear-gradient(135deg, var(--rose-faint), var(--sage-soft));
   box-shadow: var(--shadow-sm);
+  isolation: isolate;
 }
 
+/* размытая копия кадра — заполняет рамку как паспарту */
+.ph::before {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  background-image: var(--ph);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(24px) saturate(1.1);
+  transform: scale(1.2);
+  opacity: .92;
+}
+
+/* чёткое фото — вмещается целиком, не вылезает */
 .ph img {
   position: absolute;
   inset: 0;
+  z-index: 1;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform .8s;
+  object-fit: contain;
+  object-position: center;
+  transition: transform .7s ease;
 }
 
 .ph:hover img {
-  transform: scale(1.05);
+  transform: scale(1.045);
+}
+
+/* тонкая внутренняя рамка + виньетка — кадр «сидит» идеально */
+.ph::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5), inset 0 0 44px rgba(120, 90, 80, .14);
 }
 
 .ph.tall {
@@ -911,21 +954,34 @@ section.block {
   background: linear-gradient(160deg, var(--peach), var(--sage-soft));
 }
 
+/* заглушка скрыта по умолчанию, показывается только если фото не загрузилось */
 .ph .fallback {
   position: absolute;
   inset: 0;
-  display: flex;
+  z-index: 1;
+  display: none;
   align-items: center;
   justify-content: center;
   color: #fff;
-  opacity: .6;
+  opacity: .65;
 }
 
 .ph .fallback svg {
   width: 40px;
 }
 
-/* цитата-карточка */
+.ph.no-img::before {
+  display: none;
+}
+
+.ph.no-img img {
+  display: none;
+}
+
+.ph.no-img .fallback {
+  display: flex;
+}
+
 .quote {
   grid-column: span 1;
   background: linear-gradient(140deg, var(--rose), var(--rose-deep));
@@ -1028,7 +1084,6 @@ section.block {
   width: 28px;
 }
 
-/* каждый блок — свой садовый оттенок */
 .pill:nth-child(1) .ci { background: radial-gradient(circle at 35% 30%, #fff, var(--rose-faint)); }
 .pill:nth-child(1) .ci svg { color: var(--rose); }
 
@@ -1064,7 +1119,6 @@ section.block {
   line-height: 1.6;
 }
 
-/* timeline */
 .timeline {
   max-width: 840px;
   margin: 64px auto 0;
@@ -1109,7 +1163,6 @@ section.block {
   box-shadow: 0 0 0 4px var(--peach-cream), 0 0 0 5px var(--rose-soft);
 }
 
-/* чередование точек: роза / шалфей */
 .tl:nth-child(even) .dot {
   background: var(--sage);
   box-shadow: 0 0 0 4px var(--peach-cream), 0 0 0 5px var(--sage-soft);
@@ -1162,7 +1215,6 @@ section.block {
   font-size: 9px;
 }
 
-/* развёрнутые под-блоки слота 15–17 */
 .subblocks {
   margin-top: 14px;
   display: grid;
@@ -1265,7 +1317,6 @@ section.block {
   color: #fff;
 }
 
-/* инфо-плашка дресс-код / логотипы */
 .note-row {
   margin-top: 30px;
   display: grid;
@@ -1377,7 +1428,6 @@ section.block {
   font-weight: 700;
 }
 
-/* строка цены: зачёркнутая старая + крупная новая + бейдж */
 .price-row {
   display: flex;
   align-items: baseline;
@@ -1466,7 +1516,6 @@ section.block {
   color: var(--sage);
 }
 
-/* декор-космея в углу карточки */
 .price .cosmos {
   position: absolute;
   right: -10px;
@@ -1479,7 +1528,6 @@ section.block {
 .price .cosmos .pet { stroke: var(--rose-soft); }
 .price .cosmos .stem { stroke: var(--sage); }
 
-/* акцентный тариф — оливковая рамка + фото */
 .price.stay {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
@@ -1496,15 +1544,19 @@ section.block {
   padding: 34px;
 }
 
+/* фото усадьбы — панорама на весь блок, внутри рамки */
 .price.stay .pic {
-  background: var(--sage-soft);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--sage-soft);
   background-image: url('https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/166a341d6-5223-4dfe-9a91-e76737c9e831.png');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   min-height: 260px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .35);
 }
 
-/* плашка-предупреждение о росте цены */
 .price-warn {
   max-width: 920px;
   margin: 26px auto 0;
@@ -1572,7 +1624,6 @@ section.block {
   color: var(--olive-deep);
 }
 
-/* шкала роста цены — 3 ступени */
 .scale {
   max-width: 920px;
   margin: 22px auto 0;
@@ -1671,7 +1722,6 @@ section.block {
 .step:nth-child(2) .tag { color: var(--rose-deep); background: var(--peach-soft); }
 .step:nth-child(3) .tag { color: var(--rose-deep); background: var(--rose-faint); }
 
-/* форма */
 .form-card {
   max-width: 540px;
   margin: 60px auto 0;
@@ -2047,7 +2097,7 @@ section.block {
   }
 
   .price.stay .pic {
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .note-row {
@@ -2092,6 +2142,10 @@ section.block {
     flex-direction: column;
     text-align: center;
   }
+
+  .hero-photo {
+    background-position: center center;
+  }
 }
 
 @media (max-width: 520px) {
@@ -2110,11 +2164,11 @@ section.block {
 
   .ph.tall {
     grid-row: auto;
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .ph {
-    min-height: 200px;
+    min-height: 220px;
   }
 
   .form-card,
@@ -2256,7 +2310,7 @@ section.block {
         <p>Каждый гость автоматически участвует в розыгрыше. <a href="#terms">Подробности ниже</a>.</p>
       </div>
     </div>
-    <div class="gift-img reveal">
+    <div class="gift-img reveal" style="--gift:url('https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png')">
       <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png" alt="подарки и цветы" onerror="this.style.display='none'">
     </div>
   </div>
@@ -2323,16 +2377,16 @@ section.block {
       </div>
 
       <div class="gallery reveal">
-        <div class="ph tall">
-          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/166a341d6-5223-4dfe-9a91-e76737c9e831.png" alt="декор и сервировка" onerror="this.style.display='none'">
+        <div class="ph tall" style="--ph:url('https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/166a341d6-5223-4dfe-9a91-e76737c9e831.png')">
+          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/166a341d6-5223-4dfe-9a91-e76737c9e831.png" alt="декор и сервировка" onerror="this.parentElement.classList.add('no-img')">
           <div class="fallback">
             <svg viewBox="0 0 64 40" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M32 36c0-10 0-18 0-26M32 36c-5-5-12-7-18-5 3 7 10 10 18 10M32 36c5-5 12-7 18-5-3 7-10 10-18 10"/>
             </svg>
           </div>
         </div>
-        <div class="ph">
-          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png" alt="женщины на фестивале" onerror="this.style.display='none'">
+        <div class="ph" style="--ph:url('https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png')">
+          <img src="https://image.qwenlm.ai/public_source/481b83b9-1fec-40fd-9966-3b36b169e620/1fa35694b-8dff-4e08-be08-78f412e2be68.png" alt="женщины на фестивале" onerror="this.parentElement.classList.add('no-img')">
           <div class="fallback">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
               <circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/>
@@ -2777,7 +2831,7 @@ const payment = await yookassa.payments.create({
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
 })();
 
-/* ---------- count-up статистики при появлении ---------- */
+/* ---------- count-up статистики ---------- */
 (function () {
   function animate(node) {
     var target = parseInt(node.getAttribute('data-count'), 10) || 0;
@@ -2816,7 +2870,7 @@ const payment = await yookassa.payments.create({
     var max = document.body.scrollHeight - window.innerHeight;
     bar.style.width = (max > 0 ? (y / max * 100) : 0) + '%';
     if (hp && y < window.innerHeight) {
-      hp.style.backgroundPosition = 'center calc(35% + ' + (y * 0.06) + 'px)';
+      hp.style.backgroundPosition = 'center calc(32% + ' + (y * 0.05) + 'px)';
     }
     if (top) top.classList.toggle('show', y > 600);
     ticking = false;

@@ -18,7 +18,7 @@
 
   <style>
     /* ========== ROOT ========== */
-    /* Все цвета и тени взяты из index.html (садовая палитра) */
+    /* Садовая палитра с целевого сайта */
     :root {
       --rose: #c5878c;
       --rose-deep: #ab6c72;
@@ -57,7 +57,6 @@
       --serif: 'Cormorant Garamond', Georgia, serif;
       --sans: 'Mulish', system-ui, -apple-system, sans-serif;
 
-      /* Дополнительные переменные для совместимости с原有 кодом */
       --accent: var(--rose);
       --accent-dark: var(--rose-deep);
       --accent-soft: var(--rose-soft);
@@ -142,7 +141,7 @@
     .nav{display:flex; align-items:center; justify-content:space-between; height:var(--header-height); padding:0;}
     .brand{display:flex; align-items:center; gap:12px; flex-shrink:0;}
     .brand .mark{width:34px; height:34px; flex:none;}
-    .brand .name{font-family:var(--serif); font-size:1.55rem; font-weight:600; font-style:italic; letter-spacing:.01em;}
+    .brand .name{font-family:var(--serif); font-size:1.55rem; font-weight:600; font-style:italic; letter-spacing:.01em; color:var(--rose);}
     .nav-links{display:flex; gap:34px; align-items:center;}
     .nav-links a{font-size:.9rem; font-weight:400; color:var(--ink-soft); position:relative; padding:4px 0;}
     .nav-links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1px; background:var(--accent); transition:width .35s;}
@@ -196,7 +195,7 @@
     }
 
     /* ========== HERO ========== */
-    .hero{position:relative; padding:70px 0 90px; overflow:hidden;}
+    .hero{position:relative; padding:70px 0 90px; overflow:hidden; background:radial-gradient(120% 80% at 50% -10%, #fff 0%, var(--cream) 45%, var(--peach-cream) 100%);}
     .hero-bg{position:absolute; inset:0; z-index:0; pointer-events:none;}
     .hero-bg .wash1{position:absolute; width:60vw; height:60vw; right:-12vw; top:-18vw; border-radius:50%;
       background:radial-gradient(circle at 50% 50%, rgba(217,184,217,.5), transparent 65%); filter:blur(8px);}
@@ -208,7 +207,7 @@
     .hero-meta{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
     .hero-meta .dot{width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px rgba(168,85,112,.18);}
     .hero-meta span{font-size:.85rem; color:var(--ink-soft); letter-spacing:.04em;}
-    .hero h1{font-size:clamp(2.8rem, 8.5vw, 6rem);}
+    .hero h1{font-size:clamp(2.8rem, 8.5vw, 6rem); color:var(--rose);}
     .hero h1 .line2{display:block;}
     .hero h1 .ital{color:var(--accent);}
     .hero .lead{max-width:530px; margin:26px 0 0; font-size:1.08rem; color:var(--ink-soft); font-weight:300;}
@@ -252,23 +251,25 @@
     @keyframes twinkle{0%,100%{transform:scale(.7); opacity:.3;}50%{transform:scale(1.1); opacity:.9;}}
 
     /* ========== MARQUEE ========== */
-    .marquee{border-block:1px solid var(--line); background:linear-gradient(90deg, rgba(249,209,209,.35), rgba(217,184,217,.3)); padding:18px 0; overflow:hidden; position:relative; z-index:1;}
+    .marquee{border-block:1px solid var(--line);background: var(--olive-deep); padding:18px 0; overflow:hidden; position:relative; z-index:1}
     .marquee-track{display:flex; gap:48px; width:max-content; animation:scroll 32s linear infinite; align-items:center;}
     .marquee:hover .marquee-track{animation-play-state:paused;}
-    .marquee-track span{font-family:var(--serif); font-style:italic; font-size:1.7rem; color:var(--ink); white-space:nowrap;}
+    .marquee-track span{font-family:var(--serif); font-style:italic; font-size:1.7rem; color:var(--cream); white-space:nowrap;}
     .marquee-track .fl{color:var(--accent); font-style:normal;}
     @keyframes scroll{to{transform:translateX(-50%);}}
 
     /* ========== SECTION BASE ========== */
     section.block{padding:110px 0; position:relative; z-index:1;}
     .sec-head{max-width:680px;}
-    .sec-head h2{font-size:clamp(2rem, 4.6vw, 3.6rem); margin-top:18px;}
+    .sec-head h2{font-size:clamp(2rem, 4.6vw, 3.6rem); margin-top:18px; color:var(--rose);}
+    .sec-head h2 .ital{color:var(--rose-deep);}
     .sec-head p{margin-top:18px; color:var(--ink-soft); font-weight:300; font-size:1.05rem;}
 
     /* ========== ABOUT (О ФЕСТИВАЛЕ) ========== */
     .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-top:64px;}
     .about-text p{color:var(--ink-soft); font-weight:300; font-size:1.06rem; margin:0 0 18px;}
     .about-text p b{color:var(--ink); font-weight:500;}
+    .about-text .em{color:var(--rose-deep); font-style:italic;}
     .signature{font-family:var(--serif); font-style:italic; font-size:1.5rem; color:var(--accent); margin-top:8px;}
     .about-visual{position:relative;}
     .about-visual .photo{border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow); transform:rotate(-1.4deg);}
@@ -298,9 +299,62 @@
     .tl-item .time{font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--accent);}
     .tl-item .ttl{font-weight:500; font-size:1.05rem; margin-top:2px;}
     .tl-item .desc{color:var(--ink-soft); font-weight:300; font-size:.92rem; margin-top:4px;}
+    .tl-item .desc b{color:var(--sage-deep);}
 
     /* ========== CONDITIONS (УСЛОВИЯ УЧАСТИЯ / РОЗЫГРЫШ) ========== */
     .terms{background:linear-gradient(180deg, rgba(249,209,209,.22), rgba(217,184,217,.18)); border-block:1px solid var(--line);}
+
+    /* --- Логотипы партнёров (добавлено) --- */
+    .logos {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 46px;
+    }
+    .logo-card {
+      background: var(--card);
+      border: 1px solid var(--line-sage);
+      border-radius: 14px;
+      min-width: 140px;
+      height: 84px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .logo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .logo-card .nm {
+      font-family: var(--serif);
+      font-size: 19px;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: .06em;
+    }
+    .logo-card .sub {
+      font-size: 9px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 2px;
+    }
+    .logo-card.pink {
+      background: var(--rose);
+      border-color: var(--rose);
+    }
+    .logo-card.pink .nm {
+      color: #fff;
+    }
+    .logo-card.pink .sub {
+      color: rgba(255,255,255,.8);
+    }
+
     .terms-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:56px; margin-top:56px; align-items:start;}
     .cond-list{display:grid; grid-template-columns:1fr 1fr; gap:18px 28px;}
     .cond{display:flex; gap:14px; align-items:flex-start; background:#fff; border:1px solid var(--line); border-radius:var(--r-md); padding:18px 20px; transition:transform .3s, box-shadow .3s, border-color .3s;}
@@ -311,10 +365,11 @@
     .cond p b{font-weight:500;}
     .cond-note{background:#fff; border-radius:var(--r-lg); padding:34px; box-shadow:var(--shadow-soft); position:sticky; top:110px;}
     .cond-note .ic{width:48px; height:48px; border-radius:14px; background:var(--lav); display:grid; place-items:center; margin-bottom:18px;}
+    .cond-note .ic svg{stroke:var(--rose-deep);}
     .cond-note h3{font-size:1.6rem;}
     .cond-note p{color:var(--ink-soft); font-weight:300; margin:12px 0 0; font-size:.96rem;}
     .cond-note .mini{display:flex; align-items:center; gap:10px; margin-top:22px; padding-top:20px; border-top:1px dashed var(--line); font-size:.85rem; color:var(--ink-soft);}
-    .cond-note .mini svg{flex:none;}
+    .cond-note .mini svg{flex:none; stroke:var(--accent);}
 
     /* ========== TICKETS / PAYMENT ========== */
     .pay-grid{display:grid; grid-template-columns:1fr 1.05fr; gap:56px; margin-top:56px; align-items:start;}
@@ -387,7 +442,6 @@
     .ticket .notch .dash{position:absolute; left:30px; right:30px; top:-1px; border-top:2px dashed var(--line);}
     .ticket .bottom{padding:30px 34px 36px;}
 
-    /* --- обновлённый блок цен --- */
     .price-row{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;}
     .price-row .was{
       font-family:var(--serif);
@@ -410,9 +464,9 @@
       display:inline-flex;
       align-items:center;
       gap:6px;
-      background:var(--blush);
-      color:var(--rose-deep);
-      border:1px solid var(--rose-soft);
+      background:var(--sage-cream);
+      color:var(--sage-deep);
+      border:1px solid var(--line-sage);
       font-family:var(--sans);
       font-size:.7rem;
       letter-spacing:.12em;
@@ -424,14 +478,14 @@
     .badge-early .pulse{
       width:7px; height:7px;
       border-radius:50%;
-      background:var(--accent);
-      box-shadow:0 0 0 0 var(--accent);
+      background:var(--sage);
+      box-shadow:0 0 0 0 rgba(111,132,89,.6);
       animation:pulse 1.8s infinite;
     }
     @keyframes pulse{
-      0%   { box-shadow: 0 0 0 0 rgba(197,135,140,.6); }
-      70%  { box-shadow: 0 0 0 8px rgba(197,135,140,0); }
-      100% { box-shadow: 0 0 0 0 rgba(197,135,140,0); }
+      0%   { box-shadow: 0 0 0 0 rgba(111,132,89,.55); }
+      70%  { box-shadow: 0 0 0 8px rgba(111,132,89,0); }
+      100% { box-shadow: 0 0 0 0 rgba(111,132,89,0); }
     }
 
     .incl{list-style:none; padding:0; margin:24px 0 0; display:grid; gap:12px;}
@@ -448,9 +502,9 @@
       display:flex;
       gap:16px;
       align-items:center;
-      background:linear-gradient(100deg, var(--blush), var(--cream));
-      border:1px solid var(--line);
-      border-left:4px solid var(--accent);
+      background:linear-gradient(100deg, var(--peach-soft), var(--sage-cream));
+      border:1px solid var(--line-sage);
+      border-left:4px solid var(--olive);
       border-radius:18px;
       padding:20px 26px;
       box-shadow:var(--shadow-soft);
@@ -463,8 +517,8 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      color:var(--accent-dark);
-      border:1px solid var(--line);
+      color:var(--olive-deep);
+      border:1px solid var(--line-sage);
       position:relative;
     }
     .price-warn .clk::after{
@@ -473,8 +527,13 @@
       top:6px; right:6px;
       width:8px; height:8px;
       border-radius:50%;
-      background:var(--accent);
-      animation:pulse 1.6s infinite;
+      background:var(--rose);
+      animation:pulseR 1.6s infinite;
+    }
+    @keyframes pulseR{
+      0%   { box-shadow: 0 0 0 0 rgba(197,135,140,.6); }
+      70%  { box-shadow: 0 0 0 7px rgba(197,135,140,0); }
+      100% { box-shadow: 0 0 0 0 rgba(197,135,140,0); }
     }
     .price-warn .clk svg{width:22px;}
     .price-warn .txt{
@@ -482,12 +541,12 @@
       color:var(--ink);
       line-height:1.6;
     }
-    .price-warn .txt b{color:var(--accent-dark);}
+    .price-warn .txt b{color:var(--rose-deep);}
     .price-warn .txt .hl{
       font-family:var(--serif);
       font-style:italic;
       font-size:17px;
-      color:var(--accent-dark);
+      color:var(--olive-deep);
     }
 
     /* payment form */
@@ -502,22 +561,22 @@
       padding:14px 16px; transition:border-color .25s, box-shadow .25s, background .25s;
     }
     .field input::placeholder{color:#b9a3ad;}
-    .field input:focus{outline:none; border-color:var(--accent); background:#fff; box-shadow:0 0 0 4px rgba(168,85,112,.12);}
+    .field input:focus{outline:none; border-color:var(--sage); background:#fff; box-shadow:0 0 0 4px rgba(155,177,131,.2);}
     .field input.invalid{border-color:#d98a8a; background:#fff0f0;}
 
     .check{display:flex; gap:14px; align-items:flex-start; cursor:pointer; margin:24px 0 22px; user-select:none;}
     .check input{position:absolute; opacity:0; width:0; height:0;}
-    .check .box{flex:none; width:26px; height:26px; border-radius:8px; border:1.5px solid var(--accent-soft); background:var(--cream); display:grid; place-items:center; transition:background .25s, border-color .25s, transform .2s;}
+    .check .box{flex:none; width:26px; height:26px; border-radius:8px; border:1.5px solid var(--sage-soft); background:var(--cream); display:grid; place-items:center; transition:background .25s, border-color .25s, transform .2s;}
     .check .box svg{width:14px; height:14px; stroke:#fff; stroke-width:3; fill:none; stroke-dasharray:20; stroke-dashoffset:20; transition:stroke-dashoffset .35s ease;}
-    .check input:checked + .box{background:var(--accent); border-color:var(--accent); transform:scale(1.04);}
+    .check input:checked + .box{background:var(--sage); border-color:var(--sage); transform:scale(1.04);}
     .check input:checked + .box svg{stroke-dashoffset:0;}
-    .check input:focus-visible + .box{box-shadow:0 0 0 4px rgba(168,85,112,.18);}
+    .check input:focus-visible + .box{box-shadow:0 0 0 4px rgba(155,177,131,.3);}
     .check .txt{font-size:.88rem; color:var(--ink-soft); line-height:1.5;}
-    .check .txt a{color:var(--accent); text-decoration:underline; text-underline-offset:3px;}
+    .check .txt a{color:var(--sage-deep); text-decoration:underline; text-underline-offset:3px;}
 
     .pay-form .btn{width:100%; justify-content:center; padding:18px; font-size:1rem;}
     .secure{display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; font-size:.78rem; color:var(--ink-soft);}
-    .secure svg{flex:none;}
+    .secure svg{flex:none; stroke:var(--accent);}
     .pay-logos{display:flex; align-items:center; justify-content:center; gap:14px; margin-top:18px; opacity:.7;}
     .pay-logos .yk{font-family:var(--sans); font-weight:700; letter-spacing:.02em; color:var(--ink); font-size:.95rem;}
     .pay-logos .yk span{color:var(--accent);}
@@ -554,6 +613,7 @@
     .demo pre .c{color:#b08a98;}
     .demo pre .k{color:var(--accent-soft);}
     .modal-secure{display:flex; align-items:center; justify-content:center; gap:8px; margin:22px 0 0; font-size:.78rem; color:var(--ink-soft);}
+    .modal-secure svg{stroke:var(--accent);}
 
     /* ========== REVEAL ========== */
     .reveal{opacity:0; transform:translateY(28px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);}
@@ -710,7 +770,7 @@
         <a href="#program" class="btn btn-ghost">Смотреть программу</a>
       </div>
 
-      <div style="margin-top:24px; background:var(--pink); padding:12px 20px; border-radius:var(--r-md); color:var(--ink); font-weight:500; display:inline-block;">
+      <div style="margin-top:24px; background:var(--blush); padding:12px 20px; border-radius:var(--r-md); color:var(--ink); font-weight:500; display:inline-block; border:1px solid var(--line-sage);">
         Генеральные партнёры дарят подарки на <b>80 000 ₽</b>!
         <span style="display:block; font-weight:400; font-size:.85rem; color:var(--ink-soft); margin-top:4px;">
           Каждый гость автоматически участвует в розыгрыше. Подробности
@@ -769,7 +829,7 @@
     <div class="about-grid">
       <div class="about-text reveal">
         <p><b>«BE WOMAN Fest»</b> — это мягкая встреча женщин, которые устали бежать и хотят на один день замедлиться, услышать себя и других.</p>
-        <p>Мы создаём пространство, где не нужно никому ничего доказывать. Здесь ты можешь выдохнуть, почувствовать ЖЕНЩИНУ внутри себя и просто побыть в кругу бережных, красивых и вдохновляющих людей.</p>
+        <p>Мы создаём пространство, где не нужно никому ничего доказывать. Здесь ты можешь выдохнуть, почувствовать <span class="em">ЖЕНЩИНУ</span> внутри себя и просто побыть в кругу бережных, красивых и вдохновляющих людей.</p>
         <p><b>Почему это работает:</b></p>
         <ul style="color:var(--ink-soft); font-weight:300; padding-left:20px;">
           <li>5 часов концентрированной заботы о себе</li>
@@ -778,7 +838,7 @@
           <li>Атмосфера невероятной красоты и легкости</li>
           <li>Место, где короны только поправляют</li>
         </ul>
-        <p style="margin-top:12px;">Особенную атмосферу для нас создает команда <b>INDUSTRY DECOR</b>.</p>
+        <p style="margin-top:12px;">Особенную атмосферу для нас создает команда <b style="color:var(--olive-deep);">INDUSTRY DECOR</b>.</p>
         <p class="signature">— с любовью, команда BE WOMAN</p>
       </div>
 
@@ -867,6 +927,26 @@
       <h2>Подарки на <span class="ital accent">80 000 ₽</span></h2>
       <p>Мы собрали бренды, которые разделяют ценности BE WOMAN. Они не просто поддерживают нас – они хотят порадовать именно вас!</p>
       <p style="font-weight:400; color:var(--ink);">Среди всех участниц фестиваля мы разыграем призы общей стоимостью более <b>80 000 рублей</b>.</p>
+    </div>
+
+    <!-- ========== ЛОГОТИПЫ ПАРТНЁРОВ (добавлены) ========== -->
+    <div class="logos reveal">
+      <div class="logo-card">
+        <span class="nm">PIONFLO</span>
+        <span class="sub">flower shop</span>
+      </div>
+      <div class="logo-card">
+        <span class="nm">DELUXE</span>
+        <span class="sub">центр аппаратной косметологии</span>
+      </div>
+      <div class="logo-card">
+        <span class="nm">KOSMIKO</span>
+        <span class="sub">корейская косметика</span>
+      </div>
+      <div class="logo-card pink">
+        <span class="nm">OXIGUM</span>
+        <span class="sub">пилатес</span>
+      </div>
     </div>
 
     <div class="terms-grid">
